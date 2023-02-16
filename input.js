@@ -1,4 +1,3 @@
-const { connect } = require("http2");
 
 let connection;
 // Stores the active TCP connection object.
@@ -16,12 +15,24 @@ const setupInput = function (conn) {
 
 
 const handleUserInput = function (key) {
+  console.log('Moving up')
   if (key === '\u0003') return process.exit();
-  if (key === 'w') return console.log("Move: up");
-  if (key === 'a') return console.log("Move: left");
-  if (key === 's') return console.log("Move: down");
-  if (key === 'd') return console.log("Move: right");
-  if (key === 'p') return console.log("Say: punch you")
+  if (key === 'w') {
+    connection.write("Move: up");
+  }
+  if (key === 'a') {
+    connection.write("Move: left");
+  }
+  if (key === 's') {
+    connection.write("Move: down");
+  }
+  if (key === 'd') {
+    connection.write("Move: right");
+  }
+  if (key === 'p') {
+    connection.write("Say: punch you")
+  }
 };
+
 
   module.exports = { setupInput }

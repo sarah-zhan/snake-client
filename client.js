@@ -8,20 +8,19 @@ const connect = function () {
   });
 
   conn.on("connect", () => {
-    conn.write("Successfully connected to game server");
+    console.log("Successfully connected to game server");
+    conn.write("Name: YSZ");
   });
 
   conn.on("data", (data) => {
-    conn.write("Name: YSZ");
+    console.log('you ded cuz you idled')
   });
 
   
   
   // interpret incoming data as text
   conn.setEncoding("utf8");
-  conn.on('data', () => {
-    console.log('you ded cuz you idled')
-  })
+
   return conn;
 };
 

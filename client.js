@@ -13,8 +13,10 @@ const connect = function () {
 
   conn.on("data", (data) => {
     conn.write("Name: YSZ");
-  })
+  });
 
+  
+  
   // interpret incoming data as text
   conn.setEncoding("utf8");
   conn.on('data', () => {

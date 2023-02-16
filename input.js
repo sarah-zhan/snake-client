@@ -1,3 +1,5 @@
+const { connect } = require("http2");
+
 let connection;
 // Stores the active TCP connection object.
 const setupInput = function (conn) {
@@ -19,8 +21,7 @@ const handleUserInput = function (key) {
   if (key === 'a') return console.log("Move: left");
   if (key === 's') return console.log("Move: down");
   if (key === 'd') return console.log("Move: right");
-
+  if (key === 'p') return console.log("Say: punch you")
 };
 
-
-module.exports = { setupInput};
+  module.exports = { setupInput }
